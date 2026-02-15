@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kev Digital Services</title>
+
+  <!-- Important for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0f0f0f;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: black;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav h2 {
+      color: red;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    nav ul li:hover {
+      color: red;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+    }
+
+    .hero h1 {
+      font-size: 45px;
+    }
+
+    .hero p {
+      margin: 20px 0;
+      font-size: 18px;
+      color: #bbb;
+    }
+
+    button {
+      padding: 12px 25px;
+      background: red;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: darkred;
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .services {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #1c1c1c;
+      padding: 25px;
+      width: 280px;
+      border-radius: 15px;
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: #262626;
+    }
+
+    footer {
+      background: black;
+      padding: 20px;
+      text-align: center;
+      color: #888;
+    }
+
+    /* 🔥 MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 70px 20px;
+      }
+
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <h2>Kev Digital</h2>
+    <ul>
+      <li>Home</li>
+      <li>Services</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h1>We Build Powerful Digital Brands 🚀</h1>
+    <p>Helping businesses grow online with modern strategies.</p>
+    <button onclick="showMessage()">Work With Us</button>
+  </div>
+
+  <section>
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Website Design</h3>
+        <p>High converting modern websites.</p>
+      </div>
+
+      <div class="card">
+        <h3>Social Media Growth</h3>
+        <p>We grow and manage your online presence.</p>
+      </div>
+
+      <div class="card">
+        <h3>Brand Strategy</h3>
+        <p>Position your business for long-term success.</p>
+      </div>
+    </div>
+  </section>
+<section>
+  <h2>Create an Account</h2>
+  <form id="signup-form" style="max-width:500px; margin:auto; text-align:left;">
+    <label for="email">Email:</label><br>
+    <input type="email" id="signup-email" required style="width:100%; padding:8px; margin-bottom:10px;"><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="signup-password" required style="width:100%; padding:8px; margin-bottom:10px;"><br>
+
+    <button type="submit">Sign Up</button>
+  </form>
+  <p id="signup-msg"></p>
+</section>
+
+ <section>
+  <h2>Contact</h2>
+  <p>Email: contact@kevdigital.com</p>
+
+  <form action="https://formspree.io/f/yourformid" method="POST" style="max-width:500px; margin: auto; text-align:left;">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:none;"><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="_replyto" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:none;"><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="5" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:none;"></textarea><br>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+  <script>
+    function showMessage() {
+      alert("Let's grow your business 🚀");
+    }
+  </script>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+<script>
+  // Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyDyZAs0goC1RIq1jFyrgUkrdeEk06Z6R1Q",
+    authDomain: "kevdigitalwebsite.firebaseapp.com",
+    projectId:  "kevdigitalwebsite",
+    storageBucket: "kevdigitalwebsite.firebasestorage.app",
+    messagingSenderId: "665925354328",
+    appId: "1:665925354328:web:855170b79a213489899b2d"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  // Sign-Up Form
+  const signupForm = document.getElementById('signup-form');
+  const signupMsg = document.getElementById('signup-msg');
+
+  signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('signup-email').value;
+    const password = document.getElementById('signup-password').value;
+
+    auth.createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        signupMsg.innerText = "Account created! Welcome " + userCredential.user.email;
+        signupForm.reset();
+      })
+      .catch((error) => {
+        signupMsg.innerText = error.message;
+      });
+  });
+
+  // Contact Form
+  const contactForm = document.getElementById('contact-form');
+  const contactMsg = document.getElementById('contact-msg');
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('TEST33').value;
+    const email = document.getElementById('beatsbyktm35@gmail.com').value;
+    const message = document.getElementById('TEST44').value;
+
+    db.collection('messages').add({
+      name: name,
+      email: email,
+      message: message,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(() => {
+      contactMsg.innerText = "Message sent! We'll contact you soon.";
+      contactForm.reset();
+    }).catch((error) => {
+      contactMsg.innerText = "Error: " + error.message;
+    });
+  });
+</script>
+
+</body>
+</html>
